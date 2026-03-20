@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# 🎨 Online Whiteboard (Local-First Drawing App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **Canlı Demo:** (https://onlinewhiteboardapp.netlify.app)
 
-Currently, two official plugins are available:
+## 📌 Proje Hakkında
+Bu proje, kullanıcıların herhangi bir hesap oluşturmadan ve verilerini üçüncü parti sunucularla paylaşmadan anında çizim yapabildiği, **"Local-First" (Önce Yerel)** mimariye sahip bir dijital beyaz tahta (whiteboard) uygulamasıdır. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Sıradan bir CRUD uygulamasının ötesine geçerek tamamen **İstemci Taraflı (Client-Side)** çalışacak şekilde tasarlanmıştır. Bu sayede **sıfır sunucu maliyeti (Zero-Cost Architecture)** ile sınırsız ölçeklenebilirlik ve %100 veri gizliliği sunar.
 
-## React Compiler
+## ✨ Öne Çıkan Özellikler (Mühendislik Yaklaşımı)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **🎨 Gelişmiş Çizim Motoru (HTML5 Canvas):** Standart DOM manipülasyonu yerine HTML5 `<canvas>` API kullanılarak yüksek performanslı vektörel çizim ve şekil oluşturma.
+* **🧠 İleri Seviye State Yönetimi (Undo/Redo):** "Memento Design Pattern" ilham alınarak kurulan özel yığın (stack) mimarisi sayesinde kusursuz Geri Al / İleri Al özellikleri.
+* **🗄️ Kalıcı Yerel Depolama (IndexedDB):** Kullanıcı sekmeyi kapatsa dahi çizimler kaybolmaz. LocalStorage'ın kapasite sınırlarını aşmak için asenkron yapıdaki IndexedDB kullanılmıştır.
+* **📄 Client-Side PDF Çıktısı (Export):** Çizimler, hiçbir sunucuya (backend) gönderilmeden, doğrudan kullanıcının tarayıcısında anlık olarak yüksek çözünürlüklü PDF formatına dönüştürülüp indirilebilir.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Kullanılan Teknolojiler
+* **Frontend:** React, TypeScript, Vite
+* **Stilleme:** Tailwind CSS
+* **Çizim:** Native HTML5 Canvas API
+* **Veritabanı:** IndexedDB (Sunucusuz yerel kayıt)
+* **Araçlar:** jsPDF (Client-side PDF üretimi)
+* **Hosting:** Netlify
