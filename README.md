@@ -1,6 +1,6 @@
 # 🎨 Online Whiteboard (Local-First Drawing App)
 
-🚀 **Canlı Demo:** (https://onlinewhiteboardapp.netlify.app)
+🚀 **Canlı Demo:** [https://onlinewhiteboardapp.netlify.app]
 
 ## 📌 Proje Hakkında
 Bu proje, kullanıcıların herhangi bir hesap oluşturmadan ve verilerini üçüncü parti sunucularla paylaşmadan anında çizim yapabildiği, **"Local-First" (Önce Yerel)** mimariye sahip bir dijital beyaz tahta (whiteboard) uygulamasıdır. 
