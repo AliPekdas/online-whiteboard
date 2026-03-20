@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas-bg: #f8fafc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-canvas-bg);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
